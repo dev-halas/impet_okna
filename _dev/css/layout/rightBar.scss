@@ -1,0 +1,23 @@
+.rightBar {
+    width: max(50px, 8vw);
+    max-width: 150px;
+    background-color: $dark;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 99;
+
+
+
+}
+
+.rightBar.active .facebook--ico {
+    position: fixed;
+    bottom: 0;
+}

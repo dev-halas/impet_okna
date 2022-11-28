@@ -1,0 +1,59 @@
+.exposition {
+    padding: 100px 0;
+    position: relative;
+
+    .title {
+        padding-left: 40vw;
+        padding-right: 50px;
+        width: auto;
+        width: fit-content;
+        @include responsive('tablet') {
+            padding-left: 0;
+            margin-left: 5vw;
+            width: 100%;
+        }
+    }
+}
+
+.exposition--content {
+    h2 {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    margin-left: 15vw;
+    width: 30vw;
+    position: relative;
+    padding: 80px 0;
+
+    @include responsive('tablet') {
+        width: 80vw;
+        margin-left: 5vw;
+        padding: 0;
+    }
+}
+
+.exposition--textVertical {
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    left: -5vw;
+    @include responsive('tablet') {
+        position: absolute;
+        right: -10vw;
+    }
+}
+
+.exposition--img {
+    z-index: -2;
+    position: relative;
+}
+
+.exposition .svg-map {
+    @include responsive('tablet') {
+        display: none;
+    }
+    
+}

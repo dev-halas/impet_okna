@@ -1,0 +1,28 @@
+@import "./base/reset.scss";
+@import "./base/core.scss";
+
+/* ------ Layouts ------ */
+@import "./layout/header.scss";
+@import "./layout/rightBar.scss";
+@import "./layout/svg-map.scss";
+
+/* ------ Components ------ */
+@import "./components/hero.scss";
+@import "./components/about.scss";
+@import "./components/categories.scss";
+@import "./components/realization.scss";
+@import "./components/exposition.scss";
+@import "./components/logoCarousel.scss";
+
+
+@import "./components/productHeader.scss";
+@import "./components/products.scss";
+
+@import "./components/contactPage.scss";
+
+@import "./layout/orderForm.scss";
+
+@import "./base/animations.scss";
+
+/* ------ footer ------ */
+@import "./layout/footer.scss";

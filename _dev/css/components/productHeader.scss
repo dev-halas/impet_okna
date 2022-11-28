@@ -1,0 +1,43 @@
+.productHeader {
+    aspect-ratio: 19 / 6.5;
+    position: relative;
+    overflow: hidden;
+    color: $white;
+    display: flex; 
+    align-items: center;
+
+    @include responsive('tablet') {
+        aspect-ratio: 1 / 1;
+    }
+
+    img {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-position: center center;
+    }
+
+    h1 {
+        font-size: clamp(42px, 5.5vw, 110px);
+        line-height: 1;
+        font-weight: 700; 
+        z-index: 10;
+        position: relative;
+        margin-left: 10vw;
+        margin-top: -10vh;
+        @include responsive('tablet') {
+            margin-left: 5vw;
+        }
+    }
+}
+
+
+.productHeader::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(35deg, rgba(44,44,44,0.3) 0%, rgba(30,30,30,1) 100%);
+}

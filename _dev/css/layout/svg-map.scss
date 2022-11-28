@@ -1,0 +1,9 @@
+.svg-map {
+    position: absolute;
+    width: 70vw;
+    right: -20vw;
+    z-index: -1;
+    transform: translateY(-50%);
+    top: 50%;
+    max-height: 100%;
+}

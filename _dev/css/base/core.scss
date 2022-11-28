@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;600&family=Syne:wght@700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    overflow-x: hidden;
+    font-weight: 100;
+    line-height: 1.4;
+    background-color: #ffffff;
+    font-size: 18px;
+}
+
+body.page-template-product-template {
+  background-color: #2d2d2d;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+}
+
+$dark: #2d2d2d;
+$black: #000000;
+$grey: #484848;
+$white: #ffffff;
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: clamp(30px, 2.5vw, 60px);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(24px, 2vw, 40px);
+    font-weight: 800;
+}
+
+h3 {
+    font-size: clamp(20px, 1.6vw, 32px);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: clamp(180px, 1.4vw, 26px);
+}
+
+h1,h2,h3,h4 {
+    line-height: 1.5;
+}
+
+$breakpoints: (
+  'mobile':  480px,
+  'small': 768px,
+  'tablet': 1024px,
+  'laptop':  1200px,
+  'large': 1600px,
+  'fullhd': 1920px
+) !default;
+
+@mixin responsive($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+body {
+    @include responsive('tablet') {
+        font-size: 16px;
+    }
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+$container: 80vw;
+$containerMobile: 90vw;
+
+.container {
+    width: min($container, 1600px);
+    margin: 0 auto;
+    position: relative;
+    @include responsive('tablet') {
+        width: min($containerMobile, 900px);
+    }
+}
+
+@media screen and (max-width: 782px) {
+    html {
+        margin-top: 0px !important;
+    }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+//BUTTONS 
+
+.button--white {
+    padding: 50px 30px;
+    margin: 50px 0 50px 60px;
+    width: fit-content;
+    display: block;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .button--white:hover {
+    transition: all .4s ease-in-out;
+  }
+  
+  .button--white span {
+    z-index: 3;
+    position: relative;
+  }
+  
+  .button--white:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    background: rgb(203,153,51);
+    background: linear-gradient(90deg, rgba(203,153,51,1) 0%, rgba(237,234,99,1) 100%);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+  
+  .button--white:hover:after {
+    right: -10%;
+    width: 115%;
+  }
+  
+  .button--white:before {
+    content: '';
+    z-index: 1;
+    width: 160px;
+    height: 70px;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='151.61' height='70' viewBox='0 0 151.61 70'%3E%3Cg id='Path_14' data-name='Path 14' transform='translate(0 10)' fill='none'%3E%3Cpath d='M0,0,151.61-10V60L0,50Z' stroke='none'/%3E%3Cpath d='M 150.6098022460938 -8.931858062744141 L 1 0.9362220764160156 L 1 49.06377792358398 L 150.6098022460938 58.93186187744141 L 150.6098022460938 -8.931858062744141 M 151.6098022460938 -10 L 151.6098022460938 60 L 0 50 L 0 0 L 151.6098022460938 -10 Z' stroke='none' fill='%23fff'/%3E%3C/g%3E%3Cg id='strzałka' transform='translate(23 23.001)'%3E%3Cpath id='Path_13' data-name='Path 13' d='M1.5,12.5H21.137l-6.953,5.61a.5.5,0,0,0,.629.778l7.97-6.431a.589.589,0,0,0,0-.915l-7.969-6.43a.5.5,0,0,0-.629.778l6.953,5.61H1.5a.5.5,0,0,0,0,1Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
+
+
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+  .button--white:hover:before {
+    transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -moz-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -ms-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -o-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+}
+  
+  
+  .button--black {
+    padding: 8px 30px;
+    margin: 50px 0 50px 60px;
+    width: fit-content;
+    display: flex;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    transition: all .4s ease-in-out;
+  }
+  
+  .button--black span {
+    z-index: 3;
+    position: relative;
+  }
+  
+  .button--black:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    background: rgb(203,153,51);
+    background: linear-gradient(90deg, rgba(203,153,51,1) 0%, rgba(237,234,99,1) 100%);
+    transition: all .3s ease-in-out;
+  }
+  
+  .button--black:hover:after {
+    right: -10%;
+    width: 115%;
+  }
+  
+  .button--black:before {
+    content: '';
+    z-index: 1;
+    width: 160px;
+    height: 70px;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='151.61' height='70' viewBox='0 0 151.61 70'%3E%3Cg id='Path_14' data-name='Path 14' transform='translate(0 10)' fill='none'%3E%3Cpath d='M0,0,151.61-10V60L0,50Z' stroke='none'/%3E%3Cpath d='M 150.6098022460938 -8.931858062744141 L 1 0.9362220764160156 L 1 49.06377792358398 L 150.6098022460938 58.93186187744141 L 150.6098022460938 -8.931858062744141 M 151.6098022460938 -10 L 151.6098022460938 60 L 0 50 L 0 0 L 151.6098022460938 -10 Z' stroke='none' fill='%232d2d2d'/%3E%3C/g%3E%3Cg id='strzałka' transform='translate(23 23.001)'%3E%3Cpath id='Path_13' data-name='Path 13' d='M1.5,12.5H21.137l-6.953,5.61a.5.5,0,0,0,.629.778l7.97-6.431a.589.589,0,0,0,0-.915l-7.969-6.43a.5.5,0,0,0-.629.778l6.953,5.61H1.5a.5.5,0,0,0,0,1Z' fill='%232d2d2d'/%3E%3C/g%3E%3C/svg%3E%0A");
+    
+    
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+  .button--black:hover:before {
+    transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -moz-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -ms-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+    -o-transform: rotate3d(0, 1, 0, 180deg) translateY(-50%);
+}
+
+
+.testDistance {
+    height: 200vh;
+}
+
+.title {
+  width: 100%;
+  background-color: $grey;
+  margin-bottom: 40px;
+  line-height: 1.4;
+  color: $white;
+}
+.title::before {
+  content: '_';
+}
+
+.titleGold {
+  width: 100%;
+  background: rgb(203,153,51);
+  background: linear-gradient(90deg, rgba(203,153,51,1) 0%, rgba(237,234,99,1) 100%);
+  margin-bottom: 40px;
+  line-height: 1.4;
+  color: $white;
+}
+.titleGold::before {
+  content: '_';
+}
+
+.mb40 {
+  @include responsive('tablet') {
+    margin-bottom: 40px;
+  }
+}

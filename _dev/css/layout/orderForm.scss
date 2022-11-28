@@ -1,0 +1,157 @@
+.orderForm {
+    width: 80vw;
+    @include responsive('small') {
+        width: 100vw;
+    }
+    background-color: $white;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+    visibility: hidden;
+    padding: 3vw 4vw;
+    transform: translate(-50%, -50%) rotateY(90deg);
+    -webkit-transform: translate(-50%, -50%) rotateY(90deg);
+    -moz-transform: translate(-50%, -50%) rotateY(90deg);
+    -ms-transform: translate(-50%, -50%) rotateY(90deg);
+    -o-transform: translate(-50%, -50%) rotateY(90deg);
+    opacity: 0;
+    height: 0;
+    position: absolute;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.orderForm--inner {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.--open.orderForm {
+    height: fit-content;
+    max-height: 100%;
+    position: fixed;
+    visibility: visible;
+    z-index: 99;
+    opacity: 1;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -ms-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    -webkit-transform: translate(-50%, -50%) rotateY(0deg);
+    -moz-transform: translate(-50%, -50%) rotateY(0deg);
+    -ms-transform: translate(-50%, -50%) rotateY(0deg);
+    -o-transform: translate(-50%, -50%) rotateY(0deg);
+    overflow-y: scroll;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.formExit {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: $dark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+
+    svg {
+        stroke: $white;
+        margin: auto;
+        width: 18px;
+        height: 18px;
+
+        path {
+            fill: #777;
+        }
+    }
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.formCols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+
+    input:not([type="submit"]), textarea {
+        width: 100%;
+        border: none;
+        background-color: #f2f2f2;
+        padding: 10px 20px;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #777
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+}
+
+.formCol--half{
+    grid-column: span 1;
+    @include responsive('tablet') {
+        grid-column: span 2;
+    }
+}
+
+.formCol--full {
+    grid-column: span 2;
+}
+
+.formCols {
+    .wpcf7-acceptance .wpcf7-list-item-label {
+        display: block;
+        padding-left: 20px;
+        font-size: 14px;
+
+        @include responsive('small'){
+            font-size: 10px;
+        }
+    }
+}
+
+input[name="acceptance-rodo"] {
+    position: absolute;
+    left: 0;
+    width: 18px!important;
+    height: 18px;
+}
+
+input[type="submit"] {
+    background: rgb(203,153,51);
+    background: linear-gradient(90deg, rgba(203,153,51,1) 0%, rgba(237,234,99,1) 100%);
+    color: $white;
+    border: none;
+    padding: 15px 30px;
+    display: block;
+    margin: auto;
+}
+
+input[name="project_files-zl-mfcf7-upld-btn"] {
+    background: linear-gradient(90deg,#cb9933,#edea63);
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
